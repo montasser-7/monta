@@ -305,4 +305,65 @@ class Utilisateur implements UserInterface
 
         return $this;
     }
+
+
+
+
+    /**
+     * @ORM\OneToMany(targetEntity=Reservation::class, mappedBy="iduser")
+     */
+    private $reservation;
+
+    public function __construct1()
+    {
+        $this->reservation = new ArrayCollection();
+    }
+    /**
+     * @ORM\OneToMany(targetEntity=EventLike::class, mappedBy="user")
+     */
+    private $likes;
+
+    public function __construct3()
+    {
+        $this->likes = new ArrayCollection();
+    }
+    /**
+     * @return Collection|Reservation[]
+     */
+    public function getReservation(): Collection
+    {
+        return $this->reservation;
+    }
+
+    /**
+     * @return Collection<int, EventLike>
+     */
+    public function getLikes(): Collection
+    {
+        return $this->likes;
+    }
+
+    public function addLike(EventLike $like): self
+    {
+        if (!$this->likes->contains($like)) {
+            $this->likes[] = $like;
+            $like->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLike(EventLike $like): self
+    {
+        if ($this->likes->removeElement($like)) {
+            // set the owning side to null (unless already changed)
+            if ($like->getUser() === $this) {
+                $like->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+
 }

@@ -228,7 +228,7 @@ class ProductController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $file = $form->get('image')->getData();
             $filename = md5(uniqid()) . '.' . $file->guessExtension();
-            $file->move($this->getParameter('upload_directory'), $filename);
+            $file->move($this->getParameter('image_directory'), $filename);
             $product->setImage($filename);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->flush();

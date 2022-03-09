@@ -17,6 +17,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Entity\Commande;
+use App\Repository\CommandeRepository;
 
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
@@ -190,6 +192,32 @@ class AdminController extends AbstractController
         $entityManager->persist($user);
         $entityManager->flush();
         return $this->redirectToRoute('admin');
+    }
+
+     /**
+     * @Route("/stats", name="stats")
+     */
+    public function statistiques(CommandeRepository $comRepo){
+        // On va chercher toutes les commandes
+
+        $commandes = $comRepo->countByDate();
+
+        $dates = [];
+        $commandesCount = [];
+
+
+        // On va chercher le nombre de commande par date
+        foreach($commandes as $Commande){
+            $dates[] = $Commande ['dateCommande'];
+            $commandesCount[] = $Commande['count'];
+        }
+
+        //dump($commandesCount);
+
+        return $this->render('admin/stats.html.twig', [
+            'dates' => json_encode($dates),
+            'commandesCount' => json_encode($commandesCount),
+        ]);
     }
 
 

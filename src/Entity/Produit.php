@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
 
 
@@ -152,6 +154,22 @@ class Produit
         $this->categoryprod = $category;
 
         return $this;
+    }
+
+    /**
+     * @return Collection|Lignecommande[]
+     */
+    public function getLigneCommande(): Collection
+    {
+        return $this->lignecommande;
+    }
+    /**
+     * @ORM\OneToMany(targetEntity=Lignecommande::class, mappedBy="id_produit")
+     */
+    private $lignecommande;
+    public function __construct()
+    {
+        $this->lignecommande = new ArrayCollection();
     }
 
 
