@@ -6,6 +6,7 @@ use App\Entity\Utilisateur;
 use App\Form\RegistrationFormType;
 use App\Form\UtilisateurType;
 use App\Repository\UtilisateurRepository;
+use App\Repository\CommandeRepository;
 use App\Security\UtilisateurAuthenticator;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
@@ -17,8 +18,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use App\Entity\Commande;
-use App\Repository\CommandeRepository;
 
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
@@ -43,11 +42,11 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin/users", name="admin_users")
      */
-    public function searchUsers(Request $request, PaginatorInterface $paginator): Response
+    public function searchUsers(UtilisateurRepository $rep ,Request $request, PaginatorInterface $paginator): Response
     {
         $term = $request->get("term", false);
         if($term && $term !== ""){
-            $donnees = $this->getDoctrine()->getRepository(Utilisateur::class)->findEntitiesByString($term);
+            $donnees = $rep->findEntitiesByString($term);
         }else{
             $donnees = $this->getDoctrine()->getRepository(Utilisateur::class)->findBy([], ['nom' => 'desc']);
         }
@@ -193,7 +192,6 @@ class AdminController extends AbstractController
         $entityManager->flush();
         return $this->redirectToRoute('admin');
     }
-
      /**
      * @Route("/stats", name="stats")
      */

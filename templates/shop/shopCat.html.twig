@@ -40,7 +40,7 @@
 						</div>
 						<!-- Main-menu -->
 						<div class="main-menu f-right d-none d-lg-block">
-							<nav>
+													<nav>
 								<ul id="navigation">
 									<li>
 										<a href="{{ path('home') }}">Home</a>
@@ -49,13 +49,13 @@
 										<a href="{{ path('about') }}">About</a>
 									</li>
 									<li>
-										<a href="{{ path('course') }}">Courses</a>
+										<a href="{{ path('cours') }}">Courses</a>
 									</li>
 									<li>
 										<a href="{{ path('pricing') }}">Pricing</a>
 									</li>
 									<li>
-										<a href="{{ path('event') }}">Event</a>
+										<a href="{{ path('AfficheEvenementsPublic') }}">Event</a>
 									</li>
 									<li>
 										<a href="{{ path('contact') }}">Contact</a>
@@ -68,31 +68,47 @@
 											<i class="bi-cart-fill me-1"></i>
 											Cart</ul>
 									</li>
-										<div class="d-flex">
-							{% if app.user and app.user.isVerified %}
-								<div class="header-btns d-none d-lg-block f-right">
-									<a href="{{ path('app_logout') }}" class="btn">Deconnexion</a>
-								</div>
-							{% else %}
-
-								<div class="header-btns d-none d-lg-block f-right">
-									<a href="{{ path('app_login') }}" class="btn">Connexion</a>
-								</div>
-								<div class="header-btns d-none d-lg-block f-right px-4">
-									<a href="{{ path('app_register') }}" class="btn">Inscription</a>
-								</div>
-							{% endif %}
-							<!--* profil *-->
-							{% if app.user and app.user.isVerified %}
-								<div class="header-btns d-none d-lg-block f-right px-4">
-									<a href="{{ path('utilisateur_show',{'id': app.user.id}) }}" class="btn"> PROFIL</a>
-								</div>
-							{% endif  %}
-
 								</nav>
 							</div>
+							<!-- Header-btn -->
+					
+							<div class="d-flex">
+								{% if app.user and app.user.isVerified %}
+									<div class="header-btns d-none d-lg-block f-right">
+										<a href="{{ path('app_logout') }}" class="btn">Logout</a>
+									</div>
+								{% else %}
+									<div class="header-btns d-none d-lg-block f-right">
+										<a href="{{ path('app_login') }}" class="btn">LOGIN</a>
+									</div>
+									<div class="header-btns d-none d-lg-block f-right px-4">
+										<a href="{{ path('app_register') }}" class="btn">SIGN UP</a>
+									</div>
+										{% endif %}
+										</div>
+										{% if app.user and app.user.isVerified %}
+								<div class="header-btns d-none d-lg-block f-right px-4">
+									<a href="{{ path('utilisateur_show',{'id': app.user.id}) }}" class="btn"> PROFIL</a>
+							</div>
+							{% endif  %}
 							
+								
 						
+
+							<script type="text/javascript">
+								var Tawk_API = Tawk_API || {},
+Tawk_LoadStart = new Date();
+(function () {
+var s1 = document.createElement("script"),
+s0 = document.getElementsByTagName("script")[0];
+s1.async = true;
+s1.src = 'https://embed.tawk.to/62268b16a34c24564129ecac/1ftj8ukhu';
+s1.charset = 'UTF-8';
+s1.setAttribute('crossorigin', '*');
+s0.parentNode.insertBefore(s1, s0);
+})();
+							</script>
+
 
 
 							<!-- Mobile Menu -->
@@ -296,7 +312,7 @@ entitySelector.append('<li class="errorLi">' + value + '</li>');
                                                         <ul>
                                                            <li><ahref="{{ path('home') }}">Home</a></li>
 																<li><ahref="{{ path('about') }}">About</a></li>
-																<li><ahref="{{ path('course') }}">Courses</a></li>
+																<li><ahref="{{ path('cours') }}">Courses</a></li>
 																<li><ahref="{{ path('pricing') }}">Pricing</a></li>
 																<li><ahref="{{ path('event') }}">Event</a></li>
 																<li><ahref="{{ path('contact') }}">Contact</a></li>

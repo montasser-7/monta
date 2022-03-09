@@ -364,6 +364,22 @@ class Utilisateur implements UserInterface
 
         return $this;
     }
+/**
+     *
+     * @ORM\OneToMany(targetEntity=Calendar::class, mappedBy="id",cascade={"remove"}, orphanRemoval=true)
+     */
+    private $calendar;
 
+    public function __construct2()
+    {
+        $this->calendar = new ArrayCollection();
+    }
+    /**
+     * @return Collection|Calendar[]
+     */
+    public function getCalendar(): Collection
+    {
+        return $this->calendar;
+    }
 
 }

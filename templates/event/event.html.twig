@@ -26,28 +26,60 @@
                         </div>
                         <!-- Main-menu -->
                         <div class="main-menu f-right d-none d-lg-block">
-                            <nav>
-                                        <ul id="navigation">
-                                    <li><a href="{{ path('produit') }}">Home</a></li>
-                                    <li><a href="{{ path('about') }}">About</a></li>
-                                    <li><a href="{{ path('course') }}">Courses</a></li>
-                                    <li><a href="{{ path('pricing') }}">Pricing</a></li>
-                                    <li><a href="{{ path('event') }}">Event</a></li>
-                                    <li><a href="{{ path('contact') }}">Contact</a></li>
-                                    <li><a href="{{ path('shop') }}">Shop</a></li>
-                                    <li><a href=""> <i class="bi-cart-fill me-1"></i>
+																			<nav>
+													<ul id="navigation">
+														<li>
+															<a href="{{ path('home') }}">Home</a>
+														</li>
+														<li>
+															<a href="{{ path('about') }}">About</a>
+														</li>
+														<li>
+															<a href="{{ path('cours') }}">Courses</a>
+														</li>
+														<li>
+															<a href="pricing.html">Pricing</a>
+														</li>
+														<li>
+															<a href="{{ path('AfficheEvenementsPublic') }}">Event</a>
+														</li>
+														<li>
+															<a href="{{ path('contact') }}">Contact</a>
+														</li>
+														<li>
+															<a href="{{ path('list') }}">Shop</a>
+														</li>
+														<li>
+															<a href="">
+																<i class="bi-cart-fill me-1"></i>
+													</ul>
+													</li>
+												
+									<!-- Header-btn -->
+						<div class="d-flex">
+							{% if app.user and app.user.isVerified %}
+								<div class="header-btns d-none d-lg-block f-right">
+									<a href="{{ path('app_logout') }}" class="btn">Deconnexion</a>
+								</div>
+							{% else %}
 
-                                        
-                                </ul>
-                            </nav>
-                        </div>          
-                        <!-- Header-btn -->
-                       <div class="header-btns d-none d-lg-block f-right">
-                           <a href="{{ path('login') }}" class="btn">LOGIN</a>
-                       </div>
-                        <div class="header-btns d-none d-lg-block f-right px-4">  
-                            <a href="{{ path('signup') }}" class="btn">SIGN UP</a>
-                        </div>
+								<div class="header-btns d-none d-lg-block f-right">
+									<a href="{{ path('app_login') }}" class="btn">Connexion</a>
+								</div>
+								<div class="header-btns d-none d-lg-block f-right px-4">
+									<a href="{{ path('app_register') }}" class="btn">Inscription</a>
+								</div>
+							{% endif %}
+							<!--* profil *-->
+							{% if app.user and app.user.isVerified %}
+								<div class="header-btns d-none d-lg-block f-right px-4">
+									<a href="{{ path('utilisateur_show',{'id': app.user.id}) }}" class="btn"> PROFIL</a>
+								</div>
+							{% endif  %}
+								</nav>
+							</div>
+							
+
                        <!-- Mobile Menu -->
                        <div class="col-12">
                         <div class="mobile_menu d-block d-lg-none"></div>
@@ -445,20 +477,35 @@
                                     <div class="menu-wrapper menu-wrapper2">
                                         <!-- Main-menu -->
                                         <div class="main-menu main-menu2 text-center">
-                                            <nav>
-                                       <ul id="navigation">
-                                    <li><a href="{{ path('produit') }}">Home</a></li>
-                                    <li><a href="{{ path('about') }}">About</a></li>
-                                    <li><a href="{{ path('course') }}">Courses</a></li>
-                                    <li><a href="{{ path('pricing') }}">Pricing</a></li>
-                                    <li><a href="{{ path('event') }}">Event</a></li>
-                                    <li><a href="{{ path('contact') }}">Contact</a></li>
-                                    <li><a href="{{ path('shop') }}">Shop</a></li>
-                                    <li><a href=""> <i class="bi-cart-fill me-1"></i>
-
-                                        
-                                </ul>
-                                            </nav>
+												<nav>
+													<ul id="navigation">
+														<li>
+															<a href="{{ path('home') }}">Home</a>
+														</li>
+														<li>
+															<a href="{{ path('about') }}">About</a>
+														</li>
+														<li>
+															<a href="{{ path('cours') }}">Courses</a>
+														</li>
+														<li>
+															<a href="pricing.html">Pricing</a>
+														</li>
+														<li>
+															<a href="{{ path('AfficheEvenementsPublic') }}">Event</a>
+														</li>
+														<li>
+															<a href="{{ path('contact') }}">Contact</a>
+														</li>
+														<li>
+															<a href="{{ path('list') }}">Shop</a>
+														</li>
+														<li>
+															<a href="">
+																<i class="bi-cart-fill me-1"></i>
+													</ul>
+													</li>
+												</nav>
                                         </div>   
                                     </div>
                                 </div>

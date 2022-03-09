@@ -8,25 +8,25 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="manifest" href="site.webmanifest">
-	<link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon.ico">
 	{%block css%}
 		<!-- CSS here -->
-		<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-		<link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
-		<link rel="stylesheet" href="../assets/css/slicknav.css">
-		<link rel="stylesheet" href="../assets/css/flaticon.css">
-		<link rel="stylesheet" href="../assets/css/gijgo.css">
-		<link rel="stylesheet" href="../assets/css/animate.min.css">
-		<link rel="stylesheet" href="../assets/css/animated-headline.css">
-		<link rel="stylesheet" href="../assets/css/magnific-popup.css">
-		<link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
-		<link rel="stylesheet" href="../assets/css/themify-icons.css">
-		<link rel="stylesheet" href="../assets/css/slick.css">
-		<link rel="stylesheet" href="../assets/css/nice-select.css">
-		<link rel="stylesheet" href="../assets/css/style.css">
+		<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="../../assets/css/slicknav.css">
+		<link rel="stylesheet" href="../../assets/css/flaticon.css">
+		<link rel="stylesheet" href="../../assets/css/gijgo.css">
+		<link rel="stylesheet" href="../../assets/css/animate.min.css">
+		<link rel="stylesheet" href="../../assets/css/animated-headline.css">
+		<link rel="stylesheet" href="../../assets/css/magnific-popup.css">
+		<link rel="stylesheet" href="../../assets/css/fontawesome-all.min.css">
+		<link rel="stylesheet" href="../../assets/css/themify-icons.css">
+		<link rel="stylesheet" href="../../assets/css/slick.css">
+		<link rel="stylesheet" href="../../assets/css/nice-select.css">
+		<link rel="stylesheet" href="../../assets/css/style.css">
 	{% endblock %}
 </head>
-{% block body %}
+
 <body
 		class="black-bg">
 <!-- ? Preloader Start -->
@@ -35,13 +35,13 @@
 		<div class="preloader-inner position-relative">
 			<div class="preloader-circle"></div>
 			<div class="preloader-img pere-text">
-				<img src="../assets/img/logo/LOGO1.png" alt="">
+				<img src="../../assets/img/logo/LOGO1.png" alt="">
 			</div>
 		</div>
 	</div>
 </div>
 <!-- Preloader Start -->
-{%block header%}
+{% block header %}
 	<header>
 
 		<!-- Header Start -->
@@ -52,7 +52,7 @@
 							class="menu-wrapper d-flex align-items-center justify-content-between">
 						<!-- Logo -->
 						<div class="logo">
-							<a href="index.html"><img src="../assets/img/logo/LOGO.png" alt=""></a>
+							<a href="index.html"><img src="../../assets/img/logo/LOGO.png" alt=""></a>
 						</div>
 						<!-- Main-menu -->
 						{% block nav%}
@@ -74,7 +74,7 @@
 											<a href="{{ path('pricing') }}">Pricing</a>
 										</li>
 										<li>
-											<a href="{{ path('AfficheEvenementsPublic') }}">Event</a>
+											<a href="{{ path('event') }}">Event</a>
 										</li>
 										{% if app.user and app.user.isVerified %}
 											<li>
@@ -165,7 +165,7 @@
 				<div class="col-xl-6 col-lg-6">
 					<div class="single-topic text-center mb-30">
 						<div class="topic-img">
-							<img src="../assets/img/gallery/cat1.png" alt="">
+							<img src="../../assets/img/gallery/cat1.png" alt="">
 							<div class="topic-content-box">
 								<div class="topic-content">
 									<h3>Personal traning</h3>
@@ -181,7 +181,7 @@
 				<div class="col-xl-6 col-lg-6">
 					<div class="single-topic text-center mb-30">
 						<div class="topic-img">
-							<img src="../assets/img/gallery/cat2.png" alt="">
+							<img src="../../assets/img/gallery/cat2.png" alt="">
 							<div class="topic-content-box">
 								<div class="topic-content">
 									<h3>Group traning</h3>
@@ -212,7 +212,7 @@
 				<div class="col-lg-4 col-md-6">
 					<div class="single-cat text-center mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
 						<div class="cat-icon">
-							<img src="../assets/img/gallery/team1.png" alt="">
+							<img src="../../assets/img/gallery/team1.png" alt="">
 						</div>
 						<div class="cat-cap">
 							<h5>
@@ -226,7 +226,7 @@
 				<div class="col-lg-4 col-md-6">
 					<div class="single-cat text-center mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
 						<div class="cat-icon">
-							<img src="../assets/img/gallery/team2.png" alt="">
+							<img src="../../assets/img/gallery/team2.png" alt="">
 						</div>
 						<div class="cat-cap">
 							<h5>
@@ -240,7 +240,7 @@
 				<div class="col-lg-4 col-md-6">
 					<div class="single-cat text-center mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
 						<div class="cat-icon">
-							<img src="../assets/img/gallery/team3.png" alt="">
+							<img src="../../assets/img/gallery/team3.png" alt="">
 						</div>
 						<div class="cat-cap">
 							<h5>
@@ -263,7 +263,7 @@
 			<div class="row">
 				<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
 					<div class="box snake mb-30">
-						<div class="gallery-img big-img" style="background-image: url(../assets/img/gallery/gallery1.png);"></div>
+						<div class="gallery-img big-img" style="background-image: url(../../assets/img/gallery/gallery1.png);"></div>
 						<div class="overlay">
 							<div class="overlay-content">
 								<h3>Muscle gaining
@@ -277,7 +277,7 @@
 				</div>
 				<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
 					<div class="box snake mb-30">
-						<div class="gallery-img big-img" style="background-image: url(../assets/img/gallery/gallery2.png);"></div>
+						<div class="gallery-img big-img" style="background-image: url(../../assets/img/gallery/gallery2.png);"></div>
 						<div class="overlay">
 							<div class="overlay-content">
 								<h3>Muscle gaining
@@ -291,7 +291,7 @@
 				</div>
 				<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
 					<div class="box snake mb-30">
-						<div class="gallery-img big-img" style="background-image: url(../assets/img/gallery/gallery3.png);"></div>
+						<div class="gallery-img big-img" style="background-image: url(../../assets/img/gallery/gallery3.png);"></div>
 						<div class="overlay">
 							<div class="overlay-content">
 								<h3>Muscle gaining
@@ -305,7 +305,7 @@
 				</div>
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 					<div class="box snake mb-30">
-						<div class="gallery-img big-img" style="background-image: url(../assets/img/gallery/gallery4.png);"></div>
+						<div class="gallery-img big-img" style="background-image: url(../../assets/img/gallery/gallery4.png);"></div>
 						<div class="overlay">
 							<div class="overlay-content">
 								<h3>Muscle gaining
@@ -319,7 +319,7 @@
 				</div>
 				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
 					<div class="box snake mb-30">
-						<div class="gallery-img big-img" style="background-image: url(../assets/img/gallery/gallery5.png);"></div>
+						<div class="gallery-img big-img" style="background-image: url(../../assets/img/gallery/gallery5.png);"></div>
 						<div class="overlay">
 							<div class="overlay-content">
 								<h3>Muscle gaining
@@ -333,7 +333,7 @@
 				</div>
 				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
 					<div class="box snake mb-30">
-						<div class="gallery-img big-img" style="background-image: url(../assets/img/gallery/gallery6.png);"></div>
+						<div class="gallery-img big-img" style="background-image: url(../../assets/img/gallery/gallery6.png);"></div>
 						<div class="overlay">
 							<div class="overlay-content">
 								<h3>Muscle gaining
@@ -364,7 +364,7 @@
 					<div class="properties mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
 						<div class="properties__card">
 							<div class="about-icon">
-								<img src="../assets/img/icon/price.svg" alt="">
+								<img src="../../assets/img/icon/price.svg" alt="">
 							</div>
 							<div class="properties__caption">
 								<span class="month">3 month</span>
@@ -373,7 +373,7 @@
 								</p>
 								<div class="single-features">
 									<div class="features-icon">
-										<img src="../assets/img/icon/check.svg" alt="">
+										<img src="../../assets/img/icon/check.svg" alt="">
 									</div>
 									<div class="features-caption">
 										<p>Free riding
@@ -382,7 +382,7 @@
 								</div>
 								<div class="single-features">
 									<div class="features-icon">
-										<img src="../assets/img/icon/check.svg" alt="">
+										<img src="../../assets/img/icon/check.svg" alt="">
 									</div>
 									<div class="features-caption">
 										<p>Unlimited equipments</p>
@@ -390,7 +390,7 @@
 								</div>
 								<div class="single-features">
 									<div class="features-icon">
-										<img src="../assets/img/icon/check.svg" alt="">
+										<img src="../../assets/img/icon/check.svg" alt="">
 									</div>
 									<div class="features-caption">
 										<p>Personal trainer</p>
@@ -398,7 +398,7 @@
 								</div>
 								<div class="single-features">
 									<div class="features-icon">
-										<img src="../assets/img/icon/check.svg" alt="">
+										<img src="../../assets/img/icon/check.svg" alt="">
 									</div>
 									<div class="features-caption">
 										<p>Weight losing classes</p>
@@ -406,7 +406,7 @@
 								</div>
 								<div class="single-features mb-20">
 									<div class="features-icon">
-										<img src="../assets/img/icon/check.svg" alt="">
+										<img src="../../assets/img/icon/check.svg" alt="">
 									</div>
 									<div class="features-caption">
 										<p>Month to mouth</p>
@@ -421,7 +421,7 @@
 					<div class="properties mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
 						<div class="properties__card">
 							<div class="about-icon">
-								<img src="../assets/img/icon/price.svg" alt="">
+								<img src="../../assets/img/icon/price.svg" alt="">
 							</div>
 							<div class="properties__caption">
 								<span class="month">6 month</span>
@@ -430,7 +430,7 @@
 								</p>
 								<div class="single-features">
 									<div class="features-icon">
-										<img src="../assets/img/icon/check.svg" alt="">
+										<img src="../../assets/img/icon/check.svg" alt="">
 									</div>
 									<div class="features-caption">
 										<p>Free riding
@@ -439,7 +439,7 @@
 								</div>
 								<div class="single-features">
 									<div class="features-icon">
-										<img src="../assets/img/icon/check.svg" alt="">
+										<img src="../../assets/img/icon/check.svg" alt="">
 									</div>
 									<div class="features-caption">
 										<p>Unlimited equipments</p>
@@ -447,7 +447,7 @@
 								</div>
 								<div class="single-features">
 									<div class="features-icon">
-										<img src="../assets/img/icon/check.svg" alt="">
+										<img src="../../assets/img/icon/check.svg" alt="">
 									</div>
 									<div class="features-caption">
 										<p>Personal trainer</p>
@@ -455,7 +455,7 @@
 								</div>
 								<div class="single-features">
 									<div class="features-icon">
-										<img src="../assets/img/icon/check.svg" alt="">
+										<img src="../../assets/img/icon/check.svg" alt="">
 									</div>
 									<div class="features-caption">
 										<p>Weight losing classes</p>
@@ -463,7 +463,7 @@
 								</div>
 								<div class="single-features mb-20">
 									<div class="features-icon">
-										<img src="../assets/img/icon/check.svg" alt="">
+										<img src="../../assets/img/icon/check.svg" alt="">
 									</div>
 									<div class="features-caption">
 										<p>Month to mouth</p>
@@ -478,7 +478,7 @@
 					<div class="properties mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
 						<div class="properties__card">
 							<div class="about-icon">
-								<img src="../assets/img/icon/price.svg" alt="">
+								<img src="../../assets/img/icon/price.svg" alt="">
 							</div>
 							<div class="properties__caption">
 								<span class="month">9 month</span>
@@ -487,7 +487,7 @@
 								</p>
 								<div class="single-features">
 									<div class="features-icon">
-										<img src="../assets/img/icon/check.svg" alt="">
+										<img src="../../assets/img/icon/check.svg" alt="">
 									</div>
 									<div class="features-caption">
 										<p>Free riding
@@ -496,7 +496,7 @@
 								</div>
 								<div class="single-features">
 									<div class="features-icon">
-										<img src="../assets/img/icon/check.svg" alt="">
+										<img src="../../assets/img/icon/check.svg" alt="">
 									</div>
 									<div class="features-caption">
 										<p>Unlimited equipments</p>
@@ -504,7 +504,7 @@
 								</div>
 								<div class="single-features">
 									<div class="features-icon">
-										<img src="../assets/img/icon/check.svg" alt="">
+										<img src="../../assets/img/icon/check.svg" alt="">
 									</div>
 									<div class="features-caption">
 										<p>Personal trainer</p>
@@ -512,7 +512,7 @@
 								</div>
 								<div class="single-features">
 									<div class="features-icon">
-										<img src="../assets/img/icon/check.svg" alt="">
+										<img src="../../assets/img/icon/check.svg" alt="">
 									</div>
 									<div class="features-caption">
 										<p>Weight losing classes</p>
@@ -520,7 +520,7 @@
 								</div>
 								<div class="single-features mb-20">
 									<div class="features-icon">
-										<img src="../assets/img/icon/check.svg" alt="">
+										<img src="../../assets/img/icon/check.svg" alt="">
 									</div>
 									<div class="features-caption">
 										<p>Month to mouth</p>
@@ -542,7 +542,7 @@
 					class="right-content2">
 				<!-- img -->
 				<div class="right-img wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
-					<img src="../assets/img/gallery/about.png" alt="">
+					<img src="../../assets/img/gallery/about.png" alt="">
 				</div>
 			</div>
 			<div
@@ -580,7 +580,7 @@
 					<div class="home-blog-single mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
 						<div class="blog-img-cap">
 							<div class="blog-img">
-								<img src="../assets/img/gallery/blog1.png" alt="">
+								<img src="../../assets/img/gallery/blog1.png" alt="">
 							</div>
 							<div class="blog-cap">
 								<span>Gym & Fitness</span>
@@ -595,7 +595,7 @@
 					<div class="home-blog-single mb-30 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".6s">
 						<div class="blog-img-cap">
 							<div class="blog-img">
-								<img src="../assets/img/gallery/blog2.png" alt="">
+								<img src="../../assets/img/gallery/blog2.png" alt="">
 							</div>
 							<div class="blog-cap">
 								<span>Gym & Fitness</span>
@@ -611,7 +611,7 @@
 	</section>
 	<!-- Blog Area End -->
 	<!--? video_start -->
-	<div class="video-area section-bg2 d-flex align-items-center" data-background="../assets/img/gallery/video-bg.png">
+	<div class="video-area section-bg2 d-flex align-items-center" data-background="../../assets/img/gallery/video-bg.png">
 		<div class="container">
 			<div class="video-wrap position-relative">
 				<div class="video-icon">
@@ -630,7 +630,7 @@
 				<div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
 					<div class="single-services mb-40 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
 						<div class="features-icon">
-							<img src="../assets/img/icon/icon1.svg" alt="">
+							<img src="../../assets/img/icon/icon1.svg" alt="">
 						</div>
 						<div class="features-caption">
 							<h3>Location</h3>
@@ -642,30 +642,33 @@
 				<div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
 					<div class="single-services mb-40 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
 						<div class="features-icon">
-							<img src="../assets/img/icon/icon2.svg" alt="">
+							<img src="../../assets/img/icon/icon2.svg" alt="">
 						</div>
 						<div class="features-caption">
 							<h3>Phone</h3>
-							<p>(216) 28608927</p>
+							<p>(90) 277 278 2566</p>
+							<p>
+								(78) 267 256 2578</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
 					<div class="single-services mb-40 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">
 						<div class="features-icon">
-							<img src="../assets/img/icon/icon3.svg" alt="">
+							<img src="../../assets/img/icon/icon3.svg" alt="">
 						</div>
 						<div class="features-caption">
 							<h3>Email</h3>
-							<p>Gogympi@gmail.com</p>
+							<p>jacson767@gmail.com</p>
+							<p>contact56@zacsion.com</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-</main>{% endblock %}
-{% block footer %}
+</main>{%endblock%}
+{%block footer%}
 	<footer>
 		<!--? Footer Start-->
 		<div class="footer-area black-bg">
@@ -679,7 +682,7 @@
 									class="single-footer-caption mb-50 text-center">
 								<!-- logo -->
 								<div class="footer-logo wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-									<a href="index.html"><img src="../assets/img/logo/LOGO.png" alt=""></a>
+									<a href="index.html"><img src="../../assets/img/logo/LOGO.png" alt=""></a>
 								</div>
 								<!-- Menu -->
 								<!-- Header Start -->
@@ -704,7 +707,7 @@
 															<a href="pricing.html">Pricing</a>
 														</li>
 														<li>
-															<a href="{{ path('AfficheEvenementsPublic') }}">Event</a>
+															<a href="{{ path('event') }}">Event</a>
 														</li>
 														<li>
 															<a href="{{ path('contact') }}">Contact</a>
@@ -755,44 +758,44 @@
 {%block js%}
 	<!-- JS here -->
 
-	<script src="./../assets/js/vendor/modernizr-3.5.0.min.js"></script>
+	<script src="./../../assets/js/vendor/modernizr-3.5.0.min.js"></script>
 	<!-- Jquery, Popper, Bootstrap -->
-	<script src="./../assets/js/vendor/jquery-1.12.4.min.js"></script>
-	<script src="./../assets/js/popper.min.js"></script>
-	<script src="./../assets/js/bootstrap.min.js"></script>
+	<script src="./../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+	<script src="./../../assets/js/popper.min.js"></script>
+	<script src="./../../assets/js/bootstrap.min.js"></script>
 	<!-- Jquery Mobile Menu -->
-	<script src="./../assets/js/jquery.slicknav.min.js"></script>
+	<script src="./../../assets/js/jquery.slicknav.min.js"></script>
 
 	<!-- Jquery Slick , Owl-Carousel Plugins -->
-	<script src="./../assets/js/owl.carousel.min.js"></script>
-	<script src="./../assets/js/slick.min.js"></script>
+	<script src="./../../assets/js/owl.carousel.min.js"></script>
+	<script src="./../../assets/js/slick.min.js"></script>
 	<!-- One Page, Animated-HeadLin -->
-	<script src="./../assets/js/wow.min.js"></script>
-	<script src="./../assets/js/animated.headline.js"></script>
-	<script src="./../assets/js/jquery.magnific-popup.js"></script>
+	<script src="./../../assets/js/wow.min.js"></script>
+	<script src="./../../assets/js/animated.headline.js"></script>
+	<script src="./../../assets/js/jquery.magnific-popup.js"></script>
 
 	<!-- Date Picker -->
-	<script src="./../assets/js/gijgo.min.js"></script>
+	<script src="./../../assets/js/gijgo.min.js"></script>
 	<!-- Nice-select, sticky -->
-	<script src="./../assets/js/jquery.nice-select.min.js"></script>
-	<script src="./../assets/js/jquery.sticky.js"></script>
+	<script src="./../../assets/js/jquery.nice-select.min.js"></script>
+	<script src="./../../assets/js/jquery.sticky.js"></script>
 
 	<!-- counter , waypoint,Hover Direction -->
-	<script src="./../assets/js/jquery.counterup.min.js"></script>
-	<script src="./../assets/js/waypoints.min.js"></script>
-	<script src="./../assets/js/jquery.countdown.min.js"></script>
-	<script src="./../assets/js/hover-direction-snake.min.js"></script>
+	<script src="./../../assets/js/jquery.counterup.min.js"></script>
+	<script src="./../../assets/js/waypoints.min.js"></script>
+	<script src="./../../assets/js/jquery.countdown.min.js"></script>
+	<script src="./../../assets/js/hover-direction-snake.min.js"></script>
 
 	<!-- contact js -->
-	<script src="./../assets/js/contact.js"></script>
-	<script src="./../assets/js/jquery.form.js"></script>
-	<script src="./../assets/js/jquery.validate.min.js"></script>
-	<script src="./../assets/js/mail-script.js"></script>
-	<script src="./../assets/js/jquery.ajaxchimp.min.js"></script>
+	<script src="./../../assets/js/contact.js"></script>
+	<script src="./../../assets/js/jquery.form.js"></script>
+	<script src="./../../assets/js/jquery.validate.min.js"></script>
+	<script src="./../../assets/js/mail-script.js"></script>
+	<script src="./../../assets/js/jquery.ajaxchimp.min.js"></script>
 
 	<!-- Jquery Plugins, main Jquery -->
-	<script src="./../assets/js/plugins.js"></script>
-	<script src="./../assets/js/main.js"></script>
+	<script src="./../../assets/js/plugins.js"></script>
+	<script src="./../../assets/js/main.js"></script>
 {%endblock%}
 
 </body>

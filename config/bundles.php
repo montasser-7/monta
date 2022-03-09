@@ -19,4 +19,5 @@ return [
     MercurySeries\FlashyBundle\MercurySeriesFlashyBundle::class => ['all' => true],
     Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle::class => ['all' => true],
     Symfony\UX\Chartjs\ChartjsBundle::class => ['all' => true],
+    Gregwar\CaptchaBundle\GregwarCaptchaBundle::class => ['all' => true],
 ];

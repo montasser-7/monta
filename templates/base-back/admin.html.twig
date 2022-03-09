@@ -290,9 +290,6 @@ var entitySelector = $("#entitiesNav").html('');
 if (value.length >= minlength) {
 if (searchRequest != null) 
 searchRequest.abort();
-
-
-
 searchRequest = $.ajax({
 type: "GET",
 url: "{{ path('ajax_search') }}",
@@ -322,6 +319,7 @@ entitySelector.append('<li class="errorLi">' + value + '</li>');
 });
 });
 						</script>
+
           </div>
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">

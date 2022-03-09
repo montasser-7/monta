@@ -211,7 +211,10 @@
             }) }}
 
             {{ form_row(registrationForm.agreeTerms) }}
-            <button type="submit" class="btn btn-success mt-lg-10">S'inscrire</button>
+            
+             {{ form_row(registrationForm.captcha) }}
+                         <button type="submit" class="btn btn-success mt-lg-10">S'inscrire</button>
+
             {{ form_end(registrationForm) }}
         </div>
     </div>

@@ -16,6 +16,8 @@ use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Gregwar\CaptchaBundle\Type\CaptchaType;
+
 
 class RegistrationFormType extends AbstractType
 {
@@ -67,6 +69,11 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+            ->add('captcha', CaptchaType::class, array(
+                'width' => 200,
+                'height' => 50,
+                'length' => 5,
+            ));
         ;
     }
 
