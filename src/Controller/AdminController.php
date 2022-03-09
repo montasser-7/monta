@@ -42,11 +42,11 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin/users", name="admin_users")
      */
-    public function searchUsers(UtilisateurRepository $rep ,Request $request, PaginatorInterface $paginator): Response
+    public function searchUsers(Request $request, PaginatorInterface $paginator): Response
     {
         $term = $request->get("term", false);
         if($term && $term !== ""){
-            $donnees = $rep->findEntitiesByString($term);
+            $donnees = $this->getDoctrine()->getRepository(Utilisateur::class)->findEntitiesByString($term);
         }else{
             $donnees = $this->getDoctrine()->getRepository(Utilisateur::class)->findBy([], ['nom' => 'desc']);
         }
