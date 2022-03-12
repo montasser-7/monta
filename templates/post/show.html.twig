@@ -1,0 +1,132 @@
+{% use 'bootstrap_4_layout.html.twig'%}
+{% extends "base.html.twig" %}
+{% block body %}
+<body class="is-preload">
+
+
+
+    <!-- Main -->
+    <div style="
+    margin-top: 100px;"id="main">
+
+        <divstyle="
+    margin-top: 100px;" class="container">
+            <div class="main-containt">
+                <div style="
+    margin-top: 100px;"class="write-post-container">
+                    <div class="user-profile"
+                   style="
+    margin-top: 400px;" >
+                       
+                    </div>
+                    <div class="post-input-container" style="
+    margin-top: 100px;">
+                        <button  onclick="openForm()"><strong>Partagez avec nous vos meilleurs moments {{ user.UserName }}</strong></button>
+                    </div>
+                </div>
+                {% for p in newsfeedposts %}
+                    <div class="post-container" style="
+    margin-top: 100px">
+                        <div class="post-rows"></div>
+                        <div class="user-profile" style="
+    margin-top: 400px;">
+                            {% if p.visibilite is same as "Public"   %}
+                           
+                                <div>
+                                    <p>{{ p.Client.UserName }}</p>
+                                    <span>{{ p.DateP ? p.DateP|date('Y-m-d') : '' }}</span>
+                                </div>
+                            {% elseif p.visibilite is same as "Anonyme" %}
+                               
+                                <div>
+                                    <p>Utilisateur</p>
+                                    <span>{{ p.DateP ? p.DateP|date('Y-m-d') : '' }}</span>
+                                </div>
+                            {% else %}
+                                <img src="{{ asset('front/images/logo.png') }}">
+                                <div>
+                                    <p>TRAVEL ME</p>
+                                    <span>{{ p.DateP ? p.DateP|date('Y-m-d') : '' }}</span>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <p>{{ p.DescriptionP }}<a href="{{path('post_hashtag',{'id':p.id })}}" id="hashtag"> {{ p.HashtagP}} </a></p>
+                        {% if  p.ImageP|length > 0 %}
+                            <img src="{{ asset('uploads/'~ p.ImageP ) }}" width="50px" heigth="50px" class="post-img">
+                        {% else %}
+                            <p></p>
+                        {% endif %}
+                        <div class="post-rows">
+                            <div class="activity-icons">
+                                <div><a href="{{path('post_like',{'id':p.id })}}" class="btn btn-link js-like">
+                                        {% if app.user and p.isLikeByUser(app.user) %}
+                                            <i class="fas fa-thumbs-up" ></i>
+                                        {% else %}
+                                            <i class="far fa-thumbs-up" ></i>
+                                        {% endif %}
+                                        <span class="js-likes">{{ p.Likes | length }}</span>
+                                        <span class="js-label">J'aime</span>
+
+                                    </a></div>
+                                <div><img src="{{ asset('front/images/comments.png') }}">{{ p.commentaires | length }} comments</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="write-post-container">
+                        <div class="user-profile">
+                            <img src="{{ asset('front/images/user.svg') }}">
+                        </div>
+                        <div class="post-input-container">
+                            <a href="{{ path('userpost',{'id':p.id }) }}" ><strong>Ajouter Un Commentaire</strong></a>
+                            
+                        </div>
+                    </div>
+                {% endfor  %}
+                <footer>
+                    <div class="pagination">
+                        {{ knp_pagination_render(newsfeedposts) }}
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-popup">
+        <div class="form-popup" id="popupForm">
+            <section class="post">
+                <header>Ajouter Publication</header>
+                <div class="form">
+                    {{ form_start(formp,{'attr' :{'novalidate':'novalidate'}}) }}
+                    <div class="user-profile">
+                        <img src="{{ asset('front/images/user.svg') }}" alt="logo">
+                        <div class="details">
+                            <p>{{ user.UserName }}</p>
+                            <div class="privacy">
+                                {{form_widget(formp.visibilite)}}
+                            </div>
+                        </div>
+                    </div>
+                    {{form_widget(formp.DescriptionP)}}
+                    {{ form_widget(formp.HashtagP) }}
+                    <div class="options">
+                        {{form_widget(formp.ImageP,{'attr':{'class':'list'}})}}
+                    </div>
+                    {{ form_widget(formp.Publier,{'attr':{'class':'postbutton','type':'SubmitType'}})}}
+                    {{ form_end(formp) }}
+                </div>
+                <p class="fermer" onclick="closeForm()">Fermer</p>
+            </section>
+        </div>
+    </div>
+
+
+    <!-- Copyright -->
+    <div id="copyright">
+        <ul><li>&copy; gocamp</li><li>2021/2022</li></ul>
+    </div>
+
+</div>
+
+
+</body>
+{% endblock %}

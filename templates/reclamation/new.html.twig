@@ -1,0 +1,27 @@
+{% use 'bootstrap_4_layout.html.twig'%}
+{% extends "base.html.twig" %}
+{% block body %}
+<body>
+<div class="testbox">
+    <div style=" width: 100%;
+            padding: 20px;
+            border-radius: 6px;
+            background: #fff;
+            box-shadow: 0 0 8px #006622;">
+
+        <div class="banner">
+
+        </div>
+        <br/>
+        <fieldset>
+            <legend>Reclamation</legend>
+            <div class="colums">
+    <h1>Create new Reclamation</h1>
+
+    {{ include('reclamation/_form.html.twig') }}
+
+                <a href="{{ path('reclamation') }}"><button>back to list</button></a>
+            </div>
+</body>
+
+{% endblock %}

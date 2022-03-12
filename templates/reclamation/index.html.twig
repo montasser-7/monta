@@ -1,0 +1,55 @@
+{% use 'bootstrap_4_layout.html.twig'%}
+{% extends "base.html.twig" %}
+{% block body %}
+
+<body>
+<div class="testbox">
+    <div style=" width: 100%;
+            padding: 20px;
+            border-radius: 6px;
+            background: #fff;
+            box-shadow: 0 0 8px #006622;">
+
+        <div class="banner">
+
+
+        </div>
+        <br/>
+        <fieldset>
+            <legend>Restaurant</legend>
+            <div class="colums">
+    <h1>Reclamation index</h1>
+
+    <table class="table" border="5">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type_De_Reclamation</th>
+                <th>Description_Reclamation</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reclamation in reclamations %}
+            <tr>
+                <td>{{ reclamation.TypeR }}</td>
+                <td>{{ reclamation.DescriptionR }}</td>
+                <td>{{ reclamation.DateR ? reclamation.DateR|date('Y-m-d') : '' }}</td>
+                <td>
+        
+                    <a href="{{ path('reclamation_edit', {'id': reclamation.id}) }}"><button>Edit</button></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+                <a href="{{ path('reclamation_new') }}"><button>Create new</button></a>
+            </div>
+</body>
+{% endblock %}

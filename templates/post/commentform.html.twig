@@ -1,0 +1,147 @@
+{% use 'bootstrap_4_layout.html.twig'%}
+{% extends "base.html.twig" %}
+{% block body %}
+    <!-- Main -->
+    <div id="main">
+
+        <div class="container">
+            <div class="main-containt">
+                    <div class="post-container">
+                        <div class="post-rows"></div>
+                        <div class="user-profile" style="
+    margin-top: 250px;">
+                            {% if p.visibilite is same as "Public"   %}
+                              
+                                <div>
+                                    <p>{{ p.Client.UserName }}</p>
+                                    <span>{{ p.DateP ? p.DateP|date('Y-m-d') : '' }}</span>
+                                </div>
+                            {% elseif p.visibilite is same as "Anonyme" %}
+                               
+                                <div>
+                                    <p>Utilisateur</p>
+                                    <span>{{ p.DateP ? p.DateP|date('Y-m-d') : '' }}</span>
+                                </div>
+                            {% else %}
+                              
+                                <div style="
+    margin-top: 250px;">
+                                    <p>gocamp</p>
+                                    <span>{{ p.DateP ? p.DateP|date('Y-m-d') : '' }}</span>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <p>{{ p.DescriptionP }}<a href="{{path('post_hashtag',{'id':p.id })}}" id="hashtag"> {{ p.HashtagP}} </a></p>
+                        {% if  p.ImageP|length > 0 %}
+                        <img src="{{ asset('uploads/'~ p.ImageP ) }}" width="1550px" heigth="1550px" class="post-img">
+                        {% else %}
+                            <p></p>
+                        {% endif %}
+                        <div class="post-rows">
+                        <div class="activity-icons">
+                            <div><a href="{{path('post_like',{'id':p.id })}}" class="btn btn-link js-like">
+                                    {% if app.user and p.isLikeByUser(app.user) %}
+                                        <i class="fas fa-thumbs-up" ></i>
+                                    {% else %}
+                                    <i class="far fa-thumbs-up" ></i>
+                                    {% endif %}
+                                    <span class="js-likes">{{ p.Likes | length }}</span>
+                                    <span class="js-label">J'aime</span>
+
+                                </a></div>
+                            <div>>{{ p.commentaires | length }} comments</div>
+                        </div>
+                    </div>
+                </div>
+                     <div class="write-post-container">
+                         <div class="user-profile">
+                             
+                         </div>
+
+                    <div class="write-post-container">
+                        <div class="user-profile">
+                           
+                        </div>
+                        <div class="post-input-container">
+                            <button class="btn btn-primary" ><strong>Ajouter Un Commentaire</strong></button>
+                        </div>
+                    </div>
+                 
+
+                <a  href="{{ path('post_new') }}" ><button type="button" class="btn btn-success">Retourner a la Page d'accueil</button></a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-popup">
+        <div class="form-popup" id="popupForm">
+            <section class="post">
+                <header>Ajouter Un Commentaire</header>
+                <div class="form">
+                    {{ form_start(formc,{'attr' :{'novalidate':'novalidate'}}) }}
+                    <div class="user-profile">
+             
+                        <div class="details">
+                            <p>{{ user.UserName }}</p>
+                        </div>
+                    </div>
+                    {{form_widget(formc.Commentaire)}}
+                    <div class="options">
+                    </div>
+
+                    {{ form_row(formc.Commenter,{'attr':{'class':'postbutton','type':'SubmitType' }})}}
+                    {{ form_end(formc) }}
+                </div>
+                <p class="fermer" onclick="closeForm()">Fermer</p>
+            </section>
+        </div>
+    </div>
+
+
+    <!-- Copyright -->
+    <div id="copyright">
+        <ul><li>&copy; Gocamp</li><li>2021/2022</li></ul>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="{{ asset('front/assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('front/assets/js/jquery.scrollex.min.js') }}"></script>
+<script src="{{ asset('front/assets/js/jquery.scrolly.min.js') }}"></script>
+<script src="{{ asset('front/assets/js/browser.min.js') }}"></script>
+<script src="{{ asset('front/assets/js/breakpoints.min.js') }}"></script>
+<script src="{{ asset('front/assets/js/util.js') }}"></script>
+<script src="{{ asset('front/assets/js/main.js') }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    function onClickBtnLike(event){
+        event.preventDefault();
+        const url=this.href;
+        const spanCount=this.querySelector('span.js-likes');
+        const icone= this.querySelector('i');
+        axios.get(url).then(function (response){
+            spanCount.textContent=response.data.likes;
+            if (icone.classList.contains('fas'))
+                icone.classList.replace('fas','far');
+            else
+                icone.classList.replace('far','fas');
+        })
+    }
+    document.querySelectorAll('a.js-like').forEach(function (link){
+        link.addEventListener('click',onClickBtnLike);
+    })
+</script>
+<script>
+    function openForm() {
+        document.getElementById("popupForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("popupForm").style.display = "none";
+    }
+</script>
+</body>
+{% endblock %}

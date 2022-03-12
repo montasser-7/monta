@@ -1,0 +1,29 @@
+{% use 'bootstrap_4_layout.html.twig'%}
+{% extends "base.html.twig" %}
+{% block body %}
+<body>
+<div class="testbox">
+    <div style=" width: 100%;
+            padding: 20px;
+            border-radius: 6px;
+            background: #fff;
+            box-shadow: 0 0 8px #006622;">
+
+        <div class="banner">
+
+
+        </div>
+        <br/>
+        <fieldset>
+            <legend>Reclamation</legend>
+            <div class="colums">
+    <h1>Edit Reclamation</h1>
+
+    {{ include('reclamation/_form.html.twig', {'button_label': 'Update'}) }}
+
+                <a href="{{ path('reclamation_index') }}"><button>back to list</button></a>
+
+    {{ include('reclamation/_delete_form.html.twig') }}
+            </div>
+</body>
+{% endblock %}
